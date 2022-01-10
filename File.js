@@ -1,4 +1,4 @@
-function Python(CODE){
+window.onload = function() {
     let SRT1 = document.createElement("script"),
         SRT2 = document.createElement("script"),
         SRT3 = document.createElement("script"),
@@ -29,7 +29,7 @@ function Python(CODE){
         Sk.configure({output:outf, read:builtinRead}); 
         (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'CANVAS';
         var myPromise = Sk.misceval.asyncToPromise(function() {
-        return Sk.importMainWithBody("<stdin>", false, CODE, true);
+        return Sk.importMainWithBody("<stdin>", false, Python, true);
         });
         myPromise.then(function(mod) {},
             function(err) {
@@ -38,4 +38,4 @@ function Python(CODE){
         )   
      };    
      SRT3.onload=runit;
-}    
+}
